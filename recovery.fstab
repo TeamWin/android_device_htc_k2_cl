@@ -30,5 +30,5 @@
 /system                 ext4	/dev/block/mmcblk0p35  flags=display="System";backup=1;wipeingui
 /boot                   emmc	/dev/block/mmcblk0p20  flags=display="Boot";backup=1;backupname=boot
 /cache                  ext4	/dev/block/mmcblk0p36  flags=display="Cache";backup=0;wipeingui;wipeduringfactoryreset;canencryptbackup=1
-/data                   ext4	/dev/block/mmcblk0p37 /dev/block/mmcblk0p38 flags=display="Data";backup=1;wipeingui;wipeduringfactoryreset;canencryptbackup=1;userdataencryptbackup=1
+/data                   ext4	/dev/block/mmcblk0p38  flags=display="Data";backup=1;wipeingui;wipeduringfactoryreset;canencryptbackup=1;userdataencryptbackup=1
 /sdcard                 vfat	/dev/block/mmcblk1p1 /dev/block/mmcblk1  flags=display="SD Card";storage;wipeingui;removable;backup=0;settingsstorage
