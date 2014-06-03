@@ -1,5 +1,4 @@
 # 
-# Copyright (C) 2013 Simon Sickle <simon@simonsickle.com>
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -13,7 +12,7 @@
 # 
 
 # Platform
-TARGET_BOARD_PLATFORM := msm8930
+TARGET_BOARD_PLATFORM := msm8960
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 
 # Bootloader
@@ -31,11 +30,17 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom
-BOARD_KERNEL_BASE := 0x80400000
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 user_debug=31
+BOARD_KERNEL_BASE := 0x80600000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01408000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01608000
 TARGET_PREBUILT_KERNEL := device/htc/k2_cl/prebuilt/kernel
+# Build kernel from source
+# TARGET_KERNEL_CONFIG := k2_cl_defconfig
+# TARGET_KERNEL_SOURCE := kernel/htc/k2_cl
+
+# 4.2.2 Stock Recovery Basics
+TARGET_RECOVERY_INITRC := device/htc/k2_cl/recovery/init.rc
 
 # fix this up by examining /proc/emmc on a running device
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -66,6 +71,7 @@ DEVICE_RESOLUTION := 480x800
 TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_FLASH_FROM_STORAGE := true
 TW_INCLUDE_JB_CRYPTO := true
+TW_INCLUDE_DUMLOCK := true
 
 TW_INTERNAL_STORAGE_PATH := "/internal_sdcard"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "internal_sdcard"
