@@ -1,20 +1,21 @@
-#$(call inherit-product, device/htc/m4/full_m4.mk)
+#
+# Copyright (C) 2014 Modding.MyMind http://forum.xda-developers.com/member.php?u=5537766
+# Copyright (C) 2014 ModdingMyMind https://github.com/ModdingMyMind
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
-$(call inherit-product, vendor/cm/config/cdma.mk)
-
-PRODUCT_RELEASE_NAME := k2_cl
-
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/htc/k2_cl/device_k2_cl.mk)
-
-# Device naming
-PRODUCT_DEVICE := k2_cl
-PRODUCT_NAME := cm_k2_cl
-PRODUCT_BRAND := htc
-PRODUCT_MODEL := One SV
-PRODUCT_MANUFACTURER := HTC
-
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=k2_cl BUILD_ID=JDQ39 BUILD_FINGERPRINT="htc/sprint_wwe_boost/k2cl:4.2.2/JDQ39/319994.3:user/release-keys" PRIVATE_BUILD_DESC="3.05.653.3 CL319994 release-keys"
+# This file is needed to begin the build process using CM source
+$(call inherit-product, device/htc/k2_cl/cm_k2_cl.mk)
