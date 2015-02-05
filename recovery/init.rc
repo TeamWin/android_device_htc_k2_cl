@@ -35,6 +35,7 @@ on init
     write /sys/class/android_usb/android0/iManufacturer ${ro.product.manufacturer}
     write /sys/class/android_usb/android0/iProduct ${ro.product.model}
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
+    start chargeled
 
 
 on boot
@@ -44,6 +45,9 @@ on boot
     domainname localdomain
 
     class_start default
+
+service chargeled /sbin/chargeled
+    disabled
 
 service choice_fn /sbin/choice_fn
     oneshot

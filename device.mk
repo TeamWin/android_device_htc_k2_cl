@@ -76,3 +76,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/offmode_charging_images/y_8.png:recovery/root/res/offmode_charging_images/y_8.png \
     $(LOCAL_PATH)/recovery/offmode_charging_images/y_9.png:recovery/root/res/offmode_charging_images/y_9.png \
     $(LOCAL_PATH)/recovery/offmode_charging_images/y_percent.png:recovery/root/res/offmode_charging_images/y_percent.png
+
+# Charging LED color status
+PRODUCT_PACKAGES += \
+    chargeled

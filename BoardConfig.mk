@@ -71,6 +71,8 @@ HAVE_SELINUX := true
 
 # Below flags are TWRP specific
 DEVICE_RESOLUTION := 480x800
+RECOVERY_VARIANT := twrp
+TARGET_RECOVERY_DEVICE_MODULES := chargeled
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HAS_NO_SELECT_BUTTON := true # Allow Power Button To Be Selected In Recovery

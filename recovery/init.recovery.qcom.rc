@@ -1,3 +1,6 @@
+# Services
+    start chargeled
+
 service choice_fn /sbin/choice_fn
     oneshot
 
@@ -11,3 +14,6 @@ service offmode_charging /sbin/offmode_charging
 service detect_key /sbin/detect_key
     disabled
     oneshot
+
+service chargeled /sbin/chargeled
+    disabled

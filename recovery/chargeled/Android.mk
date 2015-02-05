@@ -1,6 +1,5 @@
 #
-# Copyright (C) 2014 Modding.MyMind http://forum.xda-developers.com/member.php?u=5537766
-# Copyright (C) 2014 ModdingMyMind https://github.com/ModdingMyMind
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,14 +14,19 @@
 # limitations under the License.
 #
 
-
-ifeq ($(RECOVERY_VARIANT), twrp)
-ifeq ($(TARGET_DEVICE), k2_cl)
-
 LOCAL_PATH := $(call my-dir)
-include $(call first-makefiles-under, $(LOCAL_PATH))
+include $(CLEAR_VARS)
 
-endif
-endif
+LOCAL_SRC_FILES := chargeled.c
 
+LOCAL_CFLAGS += -Wall
+
+LOCAL_STATIC_LIBRARIES := libc liblog libcutils
+LOCAL_FORCE_STATIC_EXECUTABLE := true
+
+LOCAL_MODULE := chargeled
+LOCAL_MODULE_TAGS := optional eng
+LOCAL_MODULE_CLASS := RECOVERY_EXECUTABLES
+LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)/sbin
+include $(BUILD_EXECUTABLE)
 
