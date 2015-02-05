@@ -26,12 +26,15 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # mount point	fstype		device		[device2]
-/boot		emmc	/dev/block/platform/msm_sdcc.1/by-name/boot	flags=display="Boot";backup=1
-/system		ext4	/dev/block/platform/msm_sdcc.1/by-name/system	flags=display="System";backup=1;wipeingui
-/cache		ext4	/dev/block/platform/msm_sdcc.1/by-name/cache	flags=display="Cache";backup=1;wipeingui;wipeduringfactoryreset;canencryptbackup=1
-/data		ext4	/dev/block/platform/msm_sdcc.1/by-name/userdata	flags=display="Data";backup=1;wipeingui;wipeduringfactoryreset;canencryptbackup=1;userdataencryptbackup=1
+/boot		emmc	/dev/block/mmcblk0p20	flags=display="Boot";backup=1
+/system		ext4	/dev/block/mmcblk0p35	flags=display="System";backup=1;wipeingui
+/cache		ext4	/dev/block/mmcblk0p36	flags=display="Cache";backup=1;wipeingui;wipeduringfactoryreset;canencryptbackup=1
+/data		ext4	/dev/block/mmcblk0p37	flags=display="Data";backup=1;wipeingui;wipeduringfactoryreset;canencryptbackup=1;userdataencryptbackup=1
 /sdcard	vfat	/dev/block/mmcblk0p38	flags=display="Int_SD";wipeingui;storage;backup=0
-/recovery	emmc	/dev/block/platform/msm_sdcc.1/by-name/recovery	flags=display="Recovery";backup=1
+/recovery	emmc	/dev/block/mmcblk0p21	flags=display="Recovery";backup=1
 /external_sdcard		vfat	/dev/block/mmcblk1p1	/dev/block/mmcblk1	flags=display="Ext_SD";storage;wipeingui;backup=0;removable;settingsstorage
-/devlog		ext4	/dev/block/platform/msm_sdcc.1/by-name/devlog	flags=display="Devlog";backup=1
-/misc		emmc	/dev/block/platform/msm_sdcc.1/by-name/misc	flags=display="Misc";backup=1
+/devlog		ext4	/dev/block/mmcblk0p25	flags=display="Devlog";backup=1
+/misc		emmc	/dev/block/mmcblk0p22	flags=display="Misc";backup=1
+/carrier 	ext4	/dev/block/mmcblk0p32	flags=display="Carrier";backup=1
+/firmware_radio vfat	/dev/block/mmcblk0p16	flags=display="Firmware_radio";backup=1
+/firmware_q6	vfat	/dev/block/mmcblk0p17	flags=display="Firmware_q6";backup=1
