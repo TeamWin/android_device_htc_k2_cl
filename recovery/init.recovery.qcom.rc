@@ -1,3 +1,4 @@
+on boot
 # Services
     start chargeled
 
